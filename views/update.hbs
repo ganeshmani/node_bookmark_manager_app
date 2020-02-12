@@ -1,0 +1,12 @@
+<div class="ui container segment">
+    <form class="ui form" method="POST" action="/bookmark/{{id}}">
+        <div class="field">
+            <input type="hidden" name="id" value={{id}} />
+            <input type="text" name="url" value={{url}} />
+        </div>
+
+        <button class="ui button" type="submit">Update</button>
+    </form>
+
+    <a href="/bookmark" class="ui button">Back</a>
+</div>

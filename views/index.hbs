@@ -1,0 +1,28 @@
+<div class="ui container segment">
+    <form class="ui form" method="POST" action="/bookmark/insert">
+        <div class="field">
+            <input type="text" name="url" placeholder="Enter URL">
+        </div>
+
+        <button class="ui button" type="submit">Insert</button>
+    </form>
+</div>
+
+<div class="ui container segment">
+    <div class="ui divided list">
+        {{#each bookmarks}}
+        <div class="item">
+            <div class="right floated content">
+                <div class="ui button"><a href="/bookmark/{{id}}">Edit</a> </div>
+            </div> <img class="ui avatar image" src={{data.favicon}} />
+            <div class="content">
+                {{#if data.open_graph}}
+                <a href={{data.open_graph.url}}>{{data.title}}</a>
+                {{else}}
+                {{data.title}}
+                {{/if}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
